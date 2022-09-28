@@ -10,7 +10,6 @@
 
 int[] maxMin(int[] arr)
 {
-    int[] maxMinArr = new int[2];
     int max = arr[0];
     int min = arr[0];
     for (int i = 0; i < arr.Length; i++)
@@ -20,8 +19,8 @@ int[] maxMin(int[] arr)
         else if (min > arr[i]) min = arr[i];
 
     }
-    maxMinArr[0] = max;
-    maxMinArr[1] = min;
+    int[] maxMinArr = new int[] { max, min };
+
     return maxMinArr;
 }
 
@@ -30,6 +29,12 @@ int subtraction(int[] arr)
     return arr[0] - arr[1];
 }
 
-int[] arr = maxMin(createArr(7));
+int[] arr = createArr(7);
+int[] arr2 = maxMin(arr);
 
-Console.WriteLine($"{arr[0]} - {arr[1]} = {subtraction(arr)}");
+foreach (int element in arr)
+{
+    Console.Write($"{element}, ");
+}
+Console.WriteLine();
+Console.WriteLine($"{arr2[0]} - {arr2[1]} = {subtraction(arr2)}");
