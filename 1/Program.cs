@@ -4,7 +4,7 @@ int[] createArr(int lengthArr)
     int[] arr = new int[lengthArr];
     for (int i = 0; i < lengthArr; i++)
     {
-        arr[i] = new Random().Next(1, 1000);
+        arr[i] = new Random().Next(100, 1000);
     }
     return arr;
 }
